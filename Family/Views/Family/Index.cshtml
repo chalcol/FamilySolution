@@ -1,0 +1,34 @@
+﻿
+@model List<FamilyVieWModel>
+
+<h1>FAMILY MEMBERS</h1>
+
+@foreach (FamilyVieWModel Member in Model)
+{
+    <hr>
+
+    <div class="row family">
+       
+        <div class="col-md-2">
+            <h2>@Member.Nome</h2>
+        </div>
+
+        <div class="col-md-2">
+            <h2>@Member.Cognome</h2>
+        </div>
+
+        <div class="col-md-2">
+            <h2>@Member.DataNascita</h2>
+        </div>
+
+        <div class="col-md-2">
+            <h2>@Member.Status</h2>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-center">
+            <a asp-controller="Family" asp-action="Details" asp-route-id="@Member.Id">Details</a>
+        </div>
+    </div>
+
+}
+
